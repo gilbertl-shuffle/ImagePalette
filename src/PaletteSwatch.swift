@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /** Represents a color swatch generated from an image’s palette. */
-open class PaletteSwatch {
+public class PaletteSwatch {
 	private static let MIN_CONTRAST_TITLE_TEXT = CGFloat(3.0)
 	private static let MIN_CONTRAST_BODY_TEXT = CGFloat(4.5)
 
@@ -18,10 +18,10 @@ open class PaletteSwatch {
 	private let hex: Int64
 
 	/** This swatch’s color */
-	open let color: UIColor
+	public let color: UIColor
 
 	/** The number of pixels represented by this swatch */
-	open let population: Int64
+	public let population: Int64
 
 	private var generatedTextColors: Bool = false
 	private var _titleTextColor: UIColor?
@@ -61,7 +61,7 @@ open class PaletteSwatch {
 	* An appropriate color to use for any 'title' text which is displayed over this
 	* Swatch’s color. This color is guaranteed to have sufficient contrast.
 	*/
-	open var titleTextColor: UIColor? {
+	public var titleTextColor: UIColor? {
 		self.ensureTextColorsGenerated()
 		return self._titleTextColor
 	}
@@ -70,7 +70,7 @@ open class PaletteSwatch {
 	* An appropriate color to use for any 'body' text which is displayed over this
 	* Swatch’s color. This color is guaranteed to have sufficient contrast.
 	*/
-	open var bodyTextColor: UIColor? {
+	public var bodyTextColor: UIColor? {
 		self.ensureTextColorsGenerated()
 		return self._bodyTextColor
 	}
